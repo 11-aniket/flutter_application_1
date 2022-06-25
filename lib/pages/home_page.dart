@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
  class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
 
-      final  int day = 199;
+      final  int day = 3;
      final String name ="Ramuprasad";
      // bool nae = true;
       //double pi = 3.14;
@@ -21,7 +21,7 @@ import 'package:flutter/material.dart';
       ),
         body: Center(
           child : Container(
-            child: Text("Welcome to $day " + name),
+            child: Text("Welcome $name to $day day of learning ."),
           ),
       ),
       drawer: Drawer(),
