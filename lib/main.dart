@@ -20,7 +20,9 @@ class myfirstapp extends StatelessWidget {
         brightness: Brightness.light,
          primarySwatch: Colors.green,
          fontFamily: GoogleFonts.lato().fontFamily,
-         primaryTextTheme: GoogleFonts.aclonicaTextTheme(),
+         appBarTheme: AppBarTheme(
+
+         )
       ),
       routes: {
          "/" :(context) => LoginPage(),
