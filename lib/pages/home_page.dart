@@ -5,7 +5,7 @@ import 'package:flutter_application_1/widgets/drawer.dart';
   const HomePage({Key? key}) : super(key: key);
 
       final  int day = 3;
-     final String name ="Ramuprasad";
+     final String name ="ANIKET";
      // bool nae = true;
       //double pi = 3.14;
       // num temp = 30; and both 20.44
@@ -17,7 +17,12 @@ import 'package:flutter_application_1/widgets/drawer.dart';
 
     return Scaffold (
       appBar: AppBar(
-        title: Text("Catalog App"),
+        title: Text(
+          "Catalog App",
+        style: TextStyle(
+          color: Colors.black,
+        ),
+         ),
       ),
         body: Center(
           child : Container(
