@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/models/mobiles.dart';
 import 'package:flutter_application_1/widgets/drawer.dart';
+import 'package:flutter_application_1/models/mobiles.dart';
+import 'package:flutter_application_1/widgets/item_widget.dart';
 
  class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -14,6 +17,8 @@ import 'package:flutter_application_1/widgets/drawer.dart';
 
   @override
   Widget build(BuildContext context) {
+  
+   final dummyList = List.generate(20,(index) => catalogModel.products[0]);
 
     return Scaffold (
       appBar: AppBar(
@@ -24,11 +29,17 @@ import 'package:flutter_application_1/widgets/drawer.dart';
         ),
          ),
       ),
-        body: Center(
-          child : Container(
-            child: Text("Welcome $name to $day day of learning ."),
+        body: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: ListView.builder(
+           itemCount: dummyList.length,
+           itemBuilder: ( context ,index){
+             return ItemWidget(
+               products: dummyList[index],
+             );
+           },
           ),
-      ),
+        ),
       drawer: MyDrawer(),
     );
   }

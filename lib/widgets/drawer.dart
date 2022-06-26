@@ -15,11 +15,15 @@ class MyDrawer extends StatelessWidget {
         child: ListView(
           children: [
             DrawerHeader(
-              padding: EdgeInsets.zero,
+              padding: EdgeInsets.all(10),
               child: UserAccountsDrawerHeader(
                 margin: EdgeInsets.zero,
                 decoration: BoxDecoration(
                 color: Color.fromARGB(255, 60, 251, 203),
+                border: Border.all(
+                  color: Colors.blue,
+                  width: 4,
+                  ),
               ),
                 accountName: Text("Aniket_Gupta"),
                 accountEmail:Text("aniket.r.gupta@slrtce.in"), 
