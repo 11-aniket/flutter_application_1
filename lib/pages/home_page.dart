@@ -52,12 +52,36 @@ class _HomePageState extends State<HomePage> {
       ),
         body: Padding(
           padding: const EdgeInsets.all(16.0),
-          child: ListView.builder(
-           itemCount: catalogModel.products.length,
-           itemBuilder: ( context ,index){
-             return ItemWidget(
-               products: catalogModel.products[index],
-             );
+          child: GridView.builder(
+           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount:2,
+            crossAxisSpacing: 16,
+            mainAxisSpacing: 15,
+            ),
+           itemCount:catalogModel.products.length ,
+           itemBuilder: (context,index){
+            final item = catalogModel.products[index];
+            return Card(
+              clipBehavior: Clip.antiAlias,
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+              child: GridTile(
+                header: Container(
+                  child: Text(item.name,style: TextStyle(color: Colors.white),),
+                  padding: const EdgeInsets.all(15),
+                  decoration: BoxDecoration(
+                    color: Colors.deepPurple,
+                  ), 
+                ),
+                child : Image.network(item.image,),
+                footer: Container(
+                  child: Text(item.price.toString(), style: TextStyle(color: Colors.white),),
+                  padding: const EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                    color: Colors.black,
+                  ),
+                ),
+              ), 
+            );
            },
           ),
         ),
